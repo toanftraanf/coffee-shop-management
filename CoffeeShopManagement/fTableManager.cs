@@ -16,5 +16,22 @@ namespace CoffeeShopManagement
         {
             InitializeComponent();
         }
+
+        private void logouToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void personalInformationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fAccountProfile f = new fAccountProfile();
+            f.ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            fAdmin f = new fAdmin();
+            f.ShowDialog();
+        }
     }
 }

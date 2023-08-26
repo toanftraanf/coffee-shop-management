@@ -22,7 +22,7 @@ namespace CoffeeShopManagement
 
         private void fLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("Are you sure to close the application?", "Notification", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Are you sure to close the application?", "Notification", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
             {
                 e.Cancel = true;
             }

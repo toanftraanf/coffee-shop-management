@@ -34,26 +34,25 @@
             personalInformationToolStripMenuItem = new ToolStripMenuItem();
             logouToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            flpTable = new FlowLayoutPanel();
-            panel2 = new Panel();
-            panel3 = new Panel();
-            lsvBill = new ListView();
-            cbCategory = new ComboBox();
-            cbFood = new ComboBox();
             numericUpDown1 = new NumericUpDown();
             btnAddFood = new Button();
-            btnCheck = new Button();
+            cbFood = new ComboBox();
+            cbCategory = new ComboBox();
+            flpTable = new FlowLayoutPanel();
+            panel2 = new Panel();
+            cbSwitchTable = new ComboBox();
             btnDiscount = new Button();
             nmDiscount = new NumericUpDown();
-            nmSwitchTable = new NumericUpDown();
             btnSwitchTable = new Button();
+            btnCheck = new Button();
+            panel3 = new Panel();
+            lsvBill = new ListView();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nmDiscount).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)nmSwitchTable).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -71,6 +70,7 @@
             toolStripMenuItem1.Name = "toolStripMenuItem1";
             toolStripMenuItem1.Size = new Size(81, 29);
             toolStripMenuItem1.Text = "Admin";
+            toolStripMenuItem1.Click += toolStripMenuItem1_Click;
             // 
             // accountInformationToolStripMenuItem
             // 
@@ -84,12 +84,14 @@
             personalInformationToolStripMenuItem.Name = "personalInformationToolStripMenuItem";
             personalInformationToolStripMenuItem.Size = new Size(279, 34);
             personalInformationToolStripMenuItem.Text = "Personal Information";
+            personalInformationToolStripMenuItem.Click += personalInformationToolStripMenuItem_Click;
             // 
             // logouToolStripMenuItem
             // 
             logouToolStripMenuItem.Name = "logouToolStripMenuItem";
             logouToolStripMenuItem.Size = new Size(279, 34);
             logouToolStripMenuItem.Text = "Logout";
+            logouToolStripMenuItem.Click += logouToolStripMenuItem_Click;
             // 
             // panel1
             // 
@@ -101,57 +103,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(496, 96);
             panel1.TabIndex = 1;
-            // 
-            // flpTable
-            // 
-            flpTable.Location = new Point(12, 36);
-            flpTable.Name = "flpTable";
-            flpTable.Size = new Size(666, 562);
-            flpTable.TabIndex = 2;
-            // 
-            // panel2
-            // 
-            panel2.Controls.Add(nmSwitchTable);
-            panel2.Controls.Add(btnDiscount);
-            panel2.Controls.Add(nmDiscount);
-            panel2.Controls.Add(btnSwitchTable);
-            panel2.Controls.Add(btnCheck);
-            panel2.Location = new Point(684, 502);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(496, 96);
-            panel2.TabIndex = 2;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(lsvBill);
-            panel3.Location = new Point(684, 138);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(496, 358);
-            panel3.TabIndex = 3;
-            // 
-            // lsvBill
-            // 
-            lsvBill.Location = new Point(3, 3);
-            lsvBill.Name = "lsvBill";
-            lsvBill.Size = new Size(490, 352);
-            lsvBill.TabIndex = 0;
-            lsvBill.UseCompatibleStateImageBehavior = false;
-            // 
-            // cbCategory
-            // 
-            cbCategory.FormattingEnabled = true;
-            cbCategory.Location = new Point(3, 3);
-            cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(313, 33);
-            cbCategory.TabIndex = 0;
-            // 
-            // cbFood
-            // 
-            cbFood.FormattingEnabled = true;
-            cbFood.Location = new Point(3, 51);
-            cbFood.Name = "cbFood";
-            cbFood.Size = new Size(313, 33);
-            cbFood.TabIndex = 1;
             // 
             // numericUpDown1
             // 
@@ -171,14 +122,48 @@
             btnAddFood.Text = "Add food";
             btnAddFood.UseVisualStyleBackColor = true;
             // 
-            // btnCheck
+            // cbFood
             // 
-            btnCheck.Location = new Point(407, 3);
-            btnCheck.Name = "btnCheck";
-            btnCheck.Size = new Size(86, 90);
-            btnCheck.TabIndex = 4;
-            btnCheck.Text = "Pay";
-            btnCheck.UseVisualStyleBackColor = true;
+            cbFood.FormattingEnabled = true;
+            cbFood.Location = new Point(3, 51);
+            cbFood.Name = "cbFood";
+            cbFood.Size = new Size(313, 33);
+            cbFood.TabIndex = 1;
+            // 
+            // cbCategory
+            // 
+            cbCategory.FormattingEnabled = true;
+            cbCategory.Location = new Point(3, 3);
+            cbCategory.Name = "cbCategory";
+            cbCategory.Size = new Size(313, 33);
+            cbCategory.TabIndex = 0;
+            // 
+            // flpTable
+            // 
+            flpTable.Location = new Point(12, 36);
+            flpTable.Name = "flpTable";
+            flpTable.Size = new Size(666, 562);
+            flpTable.TabIndex = 2;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(cbSwitchTable);
+            panel2.Controls.Add(btnDiscount);
+            panel2.Controls.Add(nmDiscount);
+            panel2.Controls.Add(btnSwitchTable);
+            panel2.Controls.Add(btnCheck);
+            panel2.Location = new Point(684, 502);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(496, 96);
+            panel2.TabIndex = 2;
+            // 
+            // cbSwitchTable
+            // 
+            cbSwitchTable.FormattingEnabled = true;
+            cbSwitchTable.Location = new Point(3, 60);
+            cbSwitchTable.Name = "cbSwitchTable";
+            cbSwitchTable.Size = new Size(139, 33);
+            cbSwitchTable.TabIndex = 4;
             // 
             // btnDiscount
             // 
@@ -197,14 +182,6 @@
             nmDiscount.TabIndex = 4;
             nmDiscount.TextAlign = HorizontalAlignment.Center;
             // 
-            // nmSwitchTable
-            // 
-            nmSwitchTable.Location = new Point(3, 62);
-            nmSwitchTable.Name = "nmSwitchTable";
-            nmSwitchTable.Size = new Size(139, 31);
-            nmSwitchTable.TabIndex = 6;
-            nmSwitchTable.TextAlign = HorizontalAlignment.Center;
-            // 
             // btnSwitchTable
             // 
             btnSwitchTable.Location = new Point(3, 3);
@@ -213,6 +190,31 @@
             btnSwitchTable.TabIndex = 7;
             btnSwitchTable.Text = "Switch";
             btnSwitchTable.UseVisualStyleBackColor = true;
+            // 
+            // btnCheck
+            // 
+            btnCheck.Location = new Point(407, 3);
+            btnCheck.Name = "btnCheck";
+            btnCheck.Size = new Size(86, 90);
+            btnCheck.TabIndex = 4;
+            btnCheck.Text = "Pay";
+            btnCheck.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(lsvBill);
+            panel3.Location = new Point(684, 138);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(496, 358);
+            panel3.TabIndex = 3;
+            // 
+            // lsvBill
+            // 
+            lsvBill.Location = new Point(3, 3);
+            lsvBill.Name = "lsvBill";
+            lsvBill.Size = new Size(490, 352);
+            lsvBill.TabIndex = 0;
+            lsvBill.UseCompatibleStateImageBehavior = false;
             // 
             // fTableManager
             // 
@@ -231,11 +233,10 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-            panel2.ResumeLayout(false);
-            panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)nmDiscount).EndInit();
-            ((System.ComponentModel.ISupportInitialize)nmSwitchTable).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -259,7 +260,7 @@
         private Button btnDiscount;
         private Button btnCheck;
         private NumericUpDown nmDiscount;
-        private NumericUpDown nmSwitchTable;
         private Button btnSwitchTable;
+        private ComboBox cbSwitchTable;
     }
 }

@@ -128,8 +128,10 @@
             // 
             // fLogin
             // 
+            AcceptButton = btnLogin;
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnExit;
             ClientSize = new Size(549, 225);
             Controls.Add(panel1);
             Name = "fLogin";
