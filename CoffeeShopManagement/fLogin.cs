@@ -12,7 +12,6 @@ namespace CoffeeShopManagement
             fTableManager f = new fTableManager();
             this.Hide();
             f.ShowDialog();
-            this.Show();
         }
 
         private void btnExit_Click(object sender, EventArgs e)

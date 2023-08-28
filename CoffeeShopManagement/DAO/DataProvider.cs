@@ -14,7 +14,13 @@ namespace CoffeeShopManagement.DAO
 
         private String connectionString = "Data Source=TTT\\SQLEXPRESS;Initial Catalog=QuanLyQuanCafe;Integrated Security=True";
 
-        public static DataProvider Instance { get => instance; set => instance = value; }
+        public static DataProvider Instance 
+        {
+            get { if (instance == null) instance = new DataProvider(); return instance;} 
+            private set => instance = value; 
+        }
+
+        private DataProvider() { }
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {

@@ -51,7 +51,7 @@
             txbFoodId = new TextBox();
             label1 = new Label();
             panel5 = new Panel();
-            dataGridView1 = new DataGridView();
+            dtgvFood = new DataGridView();
             panel4 = new Panel();
             btnShowFood = new Button();
             btnDeleteFood = new Button();
@@ -61,13 +61,12 @@
             btnSearchFood = new Button();
             txbSearchFood = new TextBox();
             tpFoodCategory = new TabPage();
-            tpTable = new TabPage();
-            tpAccount = new TabPage();
             panel11 = new Panel();
             panel14 = new Panel();
             txbCategoryName = new TextBox();
             label7 = new Label();
             panel15 = new Panel();
+            txbCategoryId = new TextBox();
             label8 = new Label();
             panel16 = new Panel();
             dtgvCategory = new DataGridView();
@@ -76,24 +75,27 @@
             btnDeleteCategory = new Button();
             btnEditCategory = new Button();
             btnAddCategory = new Button();
+            tpTable = new TabPage();
             panel19 = new Panel();
             panel21 = new Panel();
-            this.cbTableStatus = new ComboBox();
+            cbTableStatus = new ComboBox();
             label10 = new Label();
             panel22 = new Panel();
-            this.txbTableName = new TextBox();
+            txbTableName = new TextBox();
             label11 = new Label();
             panel23 = new Panel();
             txbTableId = new TextBox();
             label12 = new Label();
             panel24 = new Panel();
-            this.dtgvTable = new DataGridView();
+            dtgvTable = new DataGridView();
             panel25 = new Panel();
             btnShowTable = new Button();
             btnDeleteTable = new Button();
             btnEditTable = new Button();
             btnAddTable = new Button();
+            tpAccount = new TabPage();
             panel27 = new Panel();
+            btnResetPassword = new Button();
             panel29 = new Panel();
             cbAccountType = new ComboBox();
             label14 = new Label();
@@ -108,10 +110,8 @@
             panel33 = new Panel();
             btnShowAccount = new Button();
             btnDeleteAccount = new Button();
-            this.btnEditAccount = new Button();
+            btnEditAccount = new Button();
             btnAddAccount = new Button();
-            txbCategoryId = new TextBox();
-            btnResetPassword = new Button();
             tcAdmin.SuspendLayout();
             tpBill.SuspendLayout();
             panel2.SuspendLayout();
@@ -125,25 +125,25 @@
             panel8.SuspendLayout();
             panel7.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvFood).BeginInit();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             tpFoodCategory.SuspendLayout();
-            tpTable.SuspendLayout();
-            tpAccount.SuspendLayout();
             panel11.SuspendLayout();
             panel14.SuspendLayout();
             panel15.SuspendLayout();
             panel16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dtgvCategory).BeginInit();
             panel17.SuspendLayout();
+            tpTable.SuspendLayout();
             panel19.SuspendLayout();
             panel21.SuspendLayout();
             panel22.SuspendLayout();
             panel23.SuspendLayout();
             panel24.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)this.dtgvTable).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvTable).BeginInit();
             panel25.SuspendLayout();
+            tpAccount.SuspendLayout();
             panel27.SuspendLayout();
             panel29.SuspendLayout();
             panel30.SuspendLayout();
@@ -363,21 +363,21 @@
             // 
             // panel5
             // 
-            panel5.Controls.Add(dataGridView1);
+            panel5.Controls.Add(dtgvFood);
             panel5.Location = new Point(6, 55);
             panel5.Name = "panel5";
             panel5.Size = new Size(557, 545);
             panel5.TabIndex = 3;
             // 
-            // dataGridView1
+            // dtgvFood
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(3, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(551, 539);
-            dataGridView1.TabIndex = 0;
+            dtgvFood.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvFood.Location = new Point(3, 3);
+            dtgvFood.Name = "dtgvFood";
+            dtgvFood.RowHeadersWidth = 62;
+            dtgvFood.RowTemplate.Height = 33;
+            dtgvFood.Size = new Size(551, 539);
+            dtgvFood.TabIndex = 0;
             // 
             // panel4
             // 
@@ -464,32 +464,6 @@
             tpFoodCategory.Text = "Category";
             tpFoodCategory.UseVisualStyleBackColor = true;
             // 
-            // tpTable
-            // 
-            tpTable.Controls.Add(panel19);
-            tpTable.Controls.Add(panel24);
-            tpTable.Controls.Add(panel25);
-            tpTable.Location = new Point(4, 34);
-            tpTable.Name = "tpTable";
-            tpTable.Padding = new Padding(3);
-            tpTable.Size = new Size(1021, 606);
-            tpTable.TabIndex = 3;
-            tpTable.Text = "Table";
-            tpTable.UseVisualStyleBackColor = true;
-            // 
-            // tpAccount
-            // 
-            tpAccount.Controls.Add(panel27);
-            tpAccount.Controls.Add(panel32);
-            tpAccount.Controls.Add(panel33);
-            tpAccount.Location = new Point(4, 34);
-            tpAccount.Name = "tpAccount";
-            tpAccount.Padding = new Padding(3);
-            tpAccount.Size = new Size(1021, 606);
-            tpAccount.TabIndex = 4;
-            tpAccount.Text = "Account";
-            tpAccount.UseVisualStyleBackColor = true;
-            // 
             // panel11
             // 
             panel11.Controls.Add(panel14);
@@ -533,6 +507,14 @@
             panel15.Name = "panel15";
             panel15.Size = new Size(440, 59);
             panel15.TabIndex = 2;
+            // 
+            // txbCategoryId
+            // 
+            txbCategoryId.Location = new Point(143, 14);
+            txbCategoryId.Name = "txbCategoryId";
+            txbCategoryId.ReadOnly = true;
+            txbCategoryId.Size = new Size(294, 31);
+            txbCategoryId.TabIndex = 2;
             // 
             // label8
             // 
@@ -609,6 +591,19 @@
             btnAddCategory.Text = "Add";
             btnAddCategory.UseVisualStyleBackColor = true;
             // 
+            // tpTable
+            // 
+            tpTable.Controls.Add(panel19);
+            tpTable.Controls.Add(panel24);
+            tpTable.Controls.Add(panel25);
+            tpTable.Location = new Point(4, 34);
+            tpTable.Name = "tpTable";
+            tpTable.Padding = new Padding(3);
+            tpTable.Size = new Size(1021, 606);
+            tpTable.TabIndex = 3;
+            tpTable.Text = "Table";
+            tpTable.UseVisualStyleBackColor = true;
+            // 
             // panel19
             // 
             panel19.Controls.Add(panel21);
@@ -621,7 +616,7 @@
             // 
             // panel21
             // 
-            panel21.Controls.Add(this.cbTableStatus);
+            panel21.Controls.Add(cbTableStatus);
             panel21.Controls.Add(label10);
             panel21.Location = new Point(3, 133);
             panel21.Name = "panel21";
@@ -630,11 +625,11 @@
             // 
             // cbTableStatus
             // 
-            this.cbTableStatus.FormattingEnabled = true;
-            this.cbTableStatus.Location = new Point(195, 10);
-            this.cbTableStatus.Name = "cbTableStatus";
-            this.cbTableStatus.Size = new Size(242, 33);
-            this.cbTableStatus.TabIndex = 1;
+            cbTableStatus.FormattingEnabled = true;
+            cbTableStatus.Location = new Point(195, 10);
+            cbTableStatus.Name = "cbTableStatus";
+            cbTableStatus.Size = new Size(242, 33);
+            cbTableStatus.TabIndex = 1;
             // 
             // label10
             // 
@@ -648,7 +643,7 @@
             // 
             // panel22
             // 
-            panel22.Controls.Add(this.txbTableName);
+            panel22.Controls.Add(txbTableName);
             panel22.Controls.Add(label11);
             panel22.Location = new Point(3, 68);
             panel22.Name = "panel22";
@@ -657,10 +652,10 @@
             // 
             // txbTableName
             // 
-            this.txbTableName.Location = new Point(195, 14);
-            this.txbTableName.Name = "txbTableName";
-            this.txbTableName.Size = new Size(242, 31);
-            this.txbTableName.TabIndex = 1;
+            txbTableName.Location = new Point(195, 14);
+            txbTableName.Name = "txbTableName";
+            txbTableName.Size = new Size(242, 31);
+            txbTableName.TabIndex = 1;
             // 
             // label11
             // 
@@ -701,7 +696,7 @@
             // 
             // panel24
             // 
-            panel24.Controls.Add(this.dtgvTable);
+            panel24.Controls.Add(dtgvTable);
             panel24.Location = new Point(6, 55);
             panel24.Name = "panel24";
             panel24.Size = new Size(557, 545);
@@ -709,13 +704,13 @@
             // 
             // dtgvTable
             // 
-            this.dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvTable.Location = new Point(3, 3);
-            this.dtgvTable.Name = "dtgvTable";
-            this.dtgvTable.RowHeadersWidth = 62;
-            this.dtgvTable.RowTemplate.Height = 33;
-            this.dtgvTable.Size = new Size(551, 539);
-            this.dtgvTable.TabIndex = 0;
+            dtgvTable.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvTable.Location = new Point(3, 3);
+            dtgvTable.Name = "dtgvTable";
+            dtgvTable.RowHeadersWidth = 62;
+            dtgvTable.RowTemplate.Height = 33;
+            dtgvTable.Size = new Size(551, 539);
+            dtgvTable.TabIndex = 0;
             // 
             // panel25
             // 
@@ -764,6 +759,19 @@
             btnAddTable.Text = "Add";
             btnAddTable.UseVisualStyleBackColor = true;
             // 
+            // tpAccount
+            // 
+            tpAccount.Controls.Add(panel27);
+            tpAccount.Controls.Add(panel32);
+            tpAccount.Controls.Add(panel33);
+            tpAccount.Location = new Point(4, 34);
+            tpAccount.Name = "tpAccount";
+            tpAccount.Padding = new Padding(3);
+            tpAccount.Size = new Size(1021, 606);
+            tpAccount.TabIndex = 4;
+            tpAccount.Text = "Account";
+            tpAccount.UseVisualStyleBackColor = true;
+            // 
             // panel27
             // 
             panel27.Controls.Add(btnResetPassword);
@@ -774,6 +782,15 @@
             panel27.Name = "panel27";
             panel27.Size = new Size(446, 545);
             panel27.TabIndex = 8;
+            // 
+            // btnResetPassword
+            // 
+            btnResetPassword.Location = new Point(344, 198);
+            btnResetPassword.Name = "btnResetPassword";
+            btnResetPassword.Size = new Size(99, 66);
+            btnResetPassword.TabIndex = 5;
+            btnResetPassword.Text = "Reset Password";
+            btnResetPassword.UseVisualStyleBackColor = true;
             // 
             // panel29
             // 
@@ -877,7 +894,7 @@
             // 
             panel33.Controls.Add(btnShowAccount);
             panel33.Controls.Add(btnDeleteAccount);
-            panel33.Controls.Add(this.btnEditAccount);
+            panel33.Controls.Add(btnEditAccount);
             panel33.Controls.Add(btnAddAccount);
             panel33.Location = new Point(6, 6);
             panel33.Name = "panel33";
@@ -904,12 +921,12 @@
             // 
             // btnEditAccount
             // 
-            this.btnEditAccount.Location = new Point(154, 4);
-            this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new Size(112, 34);
-            this.btnEditAccount.TabIndex = 2;
-            this.btnEditAccount.Text = "Edit";
-            this.btnEditAccount.UseVisualStyleBackColor = true;
+            btnEditAccount.Location = new Point(154, 4);
+            btnEditAccount.Name = "btnEditAccount";
+            btnEditAccount.Size = new Size(112, 34);
+            btnEditAccount.TabIndex = 2;
+            btnEditAccount.Text = "Edit";
+            btnEditAccount.UseVisualStyleBackColor = true;
             // 
             // btnAddAccount
             // 
@@ -919,23 +936,6 @@
             btnAddAccount.TabIndex = 1;
             btnAddAccount.Text = "Add";
             btnAddAccount.UseVisualStyleBackColor = true;
-            // 
-            // txbCategoryId
-            // 
-            txbCategoryId.Location = new Point(143, 14);
-            txbCategoryId.Name = "txbCategoryId";
-            txbCategoryId.ReadOnly = true;
-            txbCategoryId.Size = new Size(294, 31);
-            txbCategoryId.TabIndex = 2;
-            // 
-            // btnResetPassword
-            // 
-            btnResetPassword.Location = new Point(344, 198);
-            btnResetPassword.Name = "btnResetPassword";
-            btnResetPassword.Size = new Size(99, 66);
-            btnResetPassword.TabIndex = 5;
-            btnResetPassword.Text = "Reset Password";
-            btnResetPassword.UseVisualStyleBackColor = true;
             // 
             // fAdmin
             // 
@@ -963,13 +963,11 @@
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvFood).EndInit();
             panel4.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             tpFoodCategory.ResumeLayout(false);
-            tpTable.ResumeLayout(false);
-            tpAccount.ResumeLayout(false);
             panel11.ResumeLayout(false);
             panel14.ResumeLayout(false);
             panel14.PerformLayout();
@@ -978,6 +976,7 @@
             panel16.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dtgvCategory).EndInit();
             panel17.ResumeLayout(false);
+            tpTable.ResumeLayout(false);
             panel19.ResumeLayout(false);
             panel21.ResumeLayout(false);
             panel21.PerformLayout();
@@ -986,8 +985,9 @@
             panel23.ResumeLayout(false);
             panel23.PerformLayout();
             panel24.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)this.dtgvTable).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvTable).EndInit();
             panel25.ResumeLayout(false);
+            tpAccount.ResumeLayout(false);
             panel27.ResumeLayout(false);
             panel29.ResumeLayout(false);
             panel29.PerformLayout();
@@ -1018,7 +1018,7 @@
         private Panel panel3;
         private Panel panel6;
         private Panel panel5;
-        private DataGridView dataGridView1;
+        private DataGridView dtgvFood;
         private Panel panel4;
         private Button btnShowFood;
         private Button btnDeleteFood;
