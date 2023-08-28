@@ -1,3 +1,5 @@
+using CoffeeShopManagement.DAO;
+
 namespace CoffeeShopManagement
 {
     public partial class fLogin : Form
@@ -9,9 +11,23 @@ namespace CoffeeShopManagement
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fTableManager f = new fTableManager();
-            this.Hide();
-            f.ShowDialog();
+            string username = txbUsername.Text;
+            string password = txbPassword.Text;
+            if (login(username, password))
+            {
+                fTableManager f = new fTableManager();
+                this.Hide();
+                f.ShowDialog();
+            } else
+            {
+                MessageBox.Show("Incorrect username or password!");
+            }
+
+        }
+
+        bool login(string username, string password)
+        {
+            return AccountDAO.Instance.login(username, password);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
