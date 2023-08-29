@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoffeeShopManagement.DAO;
+using CoffeeShopManagement.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +17,35 @@ namespace CoffeeShopManagement
         public fTableManager()
         {
             InitializeComponent();
+        
+            LoadTable();
         }
 
+        #region Methods
+        void LoadTable()
+        {
+            List<Table> list = TableDAO.Instance.LoadTableList();
+            foreach (Table table in list)
+            {
+                if (table != null)
+                {
+                    Button btn = new Button() { Width = Table.width, Height = Table.height };
+                    btn.Text = table.Name + Environment.NewLine + table.Status;
+                    if(table.Status.Equals("Trống"))
+                    {
+                        btn.BackColor = Color.GreenYellow;
+                    } else
+                    {
+                        btn.BackColor = Color.LightPink;
+                    }
+
+                    flpTable.Controls.Add(btn);
+                }
+            }
+        }
+        #endregion
+
+        #region Events
         private void logouToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -33,5 +62,7 @@ namespace CoffeeShopManagement
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+        #endregion
+
     }
 }
