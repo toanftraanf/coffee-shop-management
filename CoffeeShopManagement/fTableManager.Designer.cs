@@ -140,6 +140,7 @@
             // 
             // flpTable
             // 
+            flpTable.AutoScroll = true;
             flpTable.Location = new Point(12, 36);
             flpTable.Name = "flpTable";
             flpTable.Size = new Size(666, 562);

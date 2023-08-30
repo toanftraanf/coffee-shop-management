@@ -17,7 +17,7 @@ namespace CoffeeShopManagement
         public fTableManager()
         {
             InitializeComponent();
-        
+
             LoadTable();
         }
 
@@ -31,10 +31,11 @@ namespace CoffeeShopManagement
                 {
                     Button btn = new Button() { Width = Table.width, Height = Table.height };
                     btn.Text = table.Name + Environment.NewLine + table.Status;
-                    if(table.Status.Equals("Trống"))
+                    if (table.Status.Equals("Trống"))
                     {
                         btn.BackColor = Color.GreenYellow;
-                    } else
+                    }
+                    else
                     {
                         btn.BackColor = Color.LightPink;
                     }

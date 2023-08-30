@@ -18,7 +18,9 @@ namespace CoffeeShopManagement
                 fTableManager f = new fTableManager();
                 this.Hide();
                 f.ShowDialog();
-            } else
+                this.Show();
+            }
+            else
             {
                 MessageBox.Show("Incorrect username or password!");
             }
