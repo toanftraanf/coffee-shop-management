@@ -51,6 +51,7 @@
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
+            txbTotalPrice = new TextBox();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -152,6 +153,7 @@
             // 
             // panel2
             // 
+            panel2.Controls.Add(txbTotalPrice);
             panel2.Controls.Add(cbSwitchTable);
             panel2.Controls.Add(btnDiscount);
             panel2.Controls.Add(nmDiscount);
@@ -167,23 +169,23 @@
             cbSwitchTable.FormattingEnabled = true;
             cbSwitchTable.Location = new Point(3, 60);
             cbSwitchTable.Name = "cbSwitchTable";
-            cbSwitchTable.Size = new Size(139, 33);
+            cbSwitchTable.Size = new Size(108, 33);
             cbSwitchTable.TabIndex = 4;
             // 
             // btnDiscount
             // 
-            btnDiscount.Location = new Point(211, 3);
+            btnDiscount.Location = new Point(117, 3);
             btnDiscount.Name = "btnDiscount";
-            btnDiscount.Size = new Size(139, 45);
+            btnDiscount.Size = new Size(108, 45);
             btnDiscount.TabIndex = 5;
             btnDiscount.Text = "Discount";
             btnDiscount.UseVisualStyleBackColor = true;
             // 
             // nmDiscount
             // 
-            nmDiscount.Location = new Point(211, 62);
+            nmDiscount.Location = new Point(117, 60);
             nmDiscount.Name = "nmDiscount";
-            nmDiscount.Size = new Size(139, 31);
+            nmDiscount.Size = new Size(108, 31);
             nmDiscount.TabIndex = 4;
             nmDiscount.TextAlign = HorizontalAlignment.Center;
             // 
@@ -191,7 +193,7 @@
             // 
             btnSwitchTable.Location = new Point(3, 3);
             btnSwitchTable.Name = "btnSwitchTable";
-            btnSwitchTable.Size = new Size(139, 45);
+            btnSwitchTable.Size = new Size(108, 45);
             btnSwitchTable.TabIndex = 7;
             btnSwitchTable.Text = "Switch";
             btnSwitchTable.UseVisualStyleBackColor = true;
@@ -227,13 +229,13 @@
             // columnHeader1
             // 
             columnHeader1.Text = "Food Name";
-            columnHeader1.Width = 120;
+            columnHeader1.Width = 166;
             // 
             // columnHeader2
             // 
             columnHeader2.Text = "Amount";
             columnHeader2.TextAlign = HorizontalAlignment.Center;
-            columnHeader2.Width = 120;
+            columnHeader2.Width = 80;
             // 
             // columnHeader3
             // 
@@ -244,6 +246,17 @@
             // 
             columnHeader4.Text = "Total Price";
             columnHeader4.Width = 120;
+            // 
+            // txbTotalPrice
+            // 
+            txbTotalPrice.Font = new Font("Arial", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            txbTotalPrice.ForeColor = Color.OrangeRed;
+            txbTotalPrice.Location = new Point(231, 33);
+            txbTotalPrice.Name = "txbTotalPrice";
+            txbTotalPrice.ReadOnly = true;
+            txbTotalPrice.Size = new Size(170, 33);
+            txbTotalPrice.TabIndex = 8;
+            txbTotalPrice.TextAlign = HorizontalAlignment.Right;
             // 
             // fTableManager
             // 
@@ -264,6 +277,7 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nmDiscount).EndInit();
             panel3.ResumeLayout(false);
             ResumeLayout(false);
@@ -295,5 +309,6 @@
         private ColumnHeader columnHeader2;
         private ColumnHeader columnHeader3;
         private ColumnHeader columnHeader4;
+        private TextBox txbTotalPrice;
     }
 }
