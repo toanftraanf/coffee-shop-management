@@ -1,3 +1,5 @@
+using CoffeeShopManagement.DAO;
+
 namespace CoffeeShopManagement
 {
     internal static class Program

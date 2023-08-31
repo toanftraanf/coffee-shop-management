@@ -31,6 +31,8 @@ namespace CoffeeShopManagement
                 {
                     Button btn = new Button() { Width = Table.width, Height = Table.height };
                     btn.Text = table.Name + Environment.NewLine + table.Status;
+                    btn.Click += Btn_Click;
+                    btn.Tag = table;
                     if (table.Status.Equals("Trống"))
                     {
                         btn.BackColor = Color.GreenYellow;
@@ -44,9 +46,31 @@ namespace CoffeeShopManagement
                 }
             }
         }
+
+        void showBill(int id)
+        {
+            lsvBill.Items.Clear();
+            List<Menu> menus = MenuDAO.Instance.GetListMenuByTableId(id);
+            foreach (Menu info in menus)
+            {
+                ListViewItem item = new ListViewItem(info.FoodName.ToString());
+                item.SubItems.Add(info.Count.ToString());
+                item.SubItems.Add(info.Price.ToString());
+                item.SubItems.Add(info.TotalPrice.ToString());
+                lsvBill.Items.Add(item);
+            }
+        }
+
         #endregion
 
         #region Events
+        private void Btn_Click(object? sender, EventArgs e)
+        {
+            int id = (((Button)sender).Tag as Table).ID;
+            Console.WriteLine(id.ToString());
+            showBill(id);
+        }
+
         private void logouToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();

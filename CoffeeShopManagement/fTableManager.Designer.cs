@@ -47,6 +47,10 @@
             btnCheck = new Button();
             panel3 = new Panel();
             lsvBill = new ListView();
+            columnHeader1 = new ColumnHeader();
+            columnHeader2 = new ColumnHeader();
+            columnHeader3 = new ColumnHeader();
+            columnHeader4 = new ColumnHeader();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -211,11 +215,35 @@
             // 
             // lsvBill
             // 
+            lsvBill.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
+            lsvBill.GridLines = true;
             lsvBill.Location = new Point(3, 3);
             lsvBill.Name = "lsvBill";
             lsvBill.Size = new Size(490, 352);
             lsvBill.TabIndex = 0;
             lsvBill.UseCompatibleStateImageBehavior = false;
+            lsvBill.View = View.Details;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Food Name";
+            columnHeader1.Width = 120;
+            // 
+            // columnHeader2
+            // 
+            columnHeader2.Text = "Amount";
+            columnHeader2.TextAlign = HorizontalAlignment.Center;
+            columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            columnHeader3.Text = "Price";
+            columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            columnHeader4.Text = "Total Price";
+            columnHeader4.Width = 120;
             // 
             // fTableManager
             // 
@@ -263,5 +291,9 @@
         private NumericUpDown nmDiscount;
         private Button btnSwitchTable;
         private ComboBox cbSwitchTable;
+        private ColumnHeader columnHeader1;
+        private ColumnHeader columnHeader2;
+        private ColumnHeader columnHeader3;
+        private ColumnHeader columnHeader4;
     }
 }
