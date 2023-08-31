@@ -20,9 +20,24 @@ namespace CoffeeShopManagement
             InitializeComponent();
 
             LoadTable();
+            LoadCategory();
         }
 
         #region Methods
+        void LoadCategory()
+        {
+            List<Category> list = CategoryDAO.Instance.LoadCategoryList();
+            cbCategory.DataSource = list;
+            cbCategory.DisplayMember = "Name";
+        }
+
+        void LoadFoodByCategoryID(int id)
+        {
+            List<Food> foods = FoodDAO.Instance.getFoodListByCategoryID(id);
+            cbFood.DataSource = foods;
+            cbFood.DisplayMember = "Name";
+        }
+
         void LoadTable()
         {
             List<Table> list = TableDAO.Instance.LoadTableList();
@@ -92,7 +107,23 @@ namespace CoffeeShopManagement
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+
+            ComboBox cb = sender as ComboBox;
+
+            if (cb.SelectedItem == null)
+                return;
+
+            Category selected = (Category)cb.SelectedItem;
+            id = selected.Id;
+
+            LoadFoodByCategoryID(id);
+        }
         #endregion
+
 
     }
 }

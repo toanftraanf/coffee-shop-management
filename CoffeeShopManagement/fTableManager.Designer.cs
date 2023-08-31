@@ -40,6 +40,7 @@
             cbCategory = new ComboBox();
             flpTable = new FlowLayoutPanel();
             panel2 = new Panel();
+            txbTotalPrice = new TextBox();
             cbSwitchTable = new ComboBox();
             btnDiscount = new Button();
             nmDiscount = new NumericUpDown();
@@ -51,7 +52,6 @@
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
-            txbTotalPrice = new TextBox();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
@@ -134,6 +134,7 @@
             cbFood.Name = "cbFood";
             cbFood.Size = new Size(313, 33);
             cbFood.TabIndex = 1;
+            cbFood.Text = "-Food-";
             // 
             // cbCategory
             // 
@@ -142,6 +143,8 @@
             cbCategory.Name = "cbCategory";
             cbCategory.Size = new Size(313, 33);
             cbCategory.TabIndex = 0;
+            cbCategory.Text = "-Category-";
+            cbCategory.SelectedIndexChanged += cbCategory_SelectedIndexChanged;
             // 
             // flpTable
             // 
@@ -163,6 +166,17 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(496, 96);
             panel2.TabIndex = 2;
+            // 
+            // txbTotalPrice
+            // 
+            txbTotalPrice.Font = new Font("Arial", 11F, FontStyle.Bold, GraphicsUnit.Point);
+            txbTotalPrice.ForeColor = Color.OrangeRed;
+            txbTotalPrice.Location = new Point(231, 33);
+            txbTotalPrice.Name = "txbTotalPrice";
+            txbTotalPrice.ReadOnly = true;
+            txbTotalPrice.Size = new Size(170, 33);
+            txbTotalPrice.TabIndex = 8;
+            txbTotalPrice.TextAlign = HorizontalAlignment.Right;
             // 
             // cbSwitchTable
             // 
@@ -246,17 +260,6 @@
             // 
             columnHeader4.Text = "Total Price";
             columnHeader4.Width = 120;
-            // 
-            // txbTotalPrice
-            // 
-            txbTotalPrice.Font = new Font("Arial", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            txbTotalPrice.ForeColor = Color.OrangeRed;
-            txbTotalPrice.Location = new Point(231, 33);
-            txbTotalPrice.Name = "txbTotalPrice";
-            txbTotalPrice.ReadOnly = true;
-            txbTotalPrice.Size = new Size(170, 33);
-            txbTotalPrice.TabIndex = 8;
-            txbTotalPrice.TextAlign = HorizontalAlignment.Right;
             // 
             // fTableManager
             // 
