@@ -87,7 +87,7 @@ namespace CoffeeShopManagement
         private void Btn_Click(object? sender, EventArgs e)
         {
             int id = (((Button)sender).Tag as Table).ID;
-            Console.WriteLine(id.ToString());
+            lsvBill.Tag = ((Button)sender).Tag;
             showBill(id);
         }
 
@@ -122,7 +122,24 @@ namespace CoffeeShopManagement
 
             LoadFoodByCategoryID(id);
         }
+
+        private void btnAddFood_Click(object sender, EventArgs e)
+        {
+            Table table = lsvBill.Tag as Table;
+            int billID = BillDAO.Instance.GetUncheckedBillIDByTableID(table.ID);
+            int foodID = (cbFood.SelectedItem as Food).Id;
+            int count = (int)nmFoodAmount.Value;
+            if (billID == -1)
+            {
+                BillDAO.Instance.InsertBill(table.ID);
+                BillInfoDAO.Instance.InsertBillInfo(BillDAO.Instance.GetMaxBillID(), foodID, count);
+            } else
+            {
+                BillInfoDAO.Instance.InsertBillInfo(billID, foodID, count);
+            }
+        }
         #endregion
+
 
 
     }

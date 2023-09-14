@@ -20,11 +20,7 @@ namespace CoffeeShopManagement.DAO
 
         private BillInfoDAO() { }
 
-        /// <summary>
-        /// Get the BillInfo by ID of bill
-        /// </summary>
-        /// <param name="id">The ID of the bill</param>
-        /// <returns> List of the BillsInfo </returns>
+
         public List<BillInfo> GetBillInfoList(int id)
         {
             List<BillInfo> billInfos = new List<BillInfo>();
@@ -34,6 +30,11 @@ namespace CoffeeShopManagement.DAO
                 billInfos.Add(new BillInfo(row));
             }
             return billInfos;
+        }
+
+        public void InsertBillInfo(int idBill, int idFood, int count)
+        {
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBillInfo @idBill , @idFood , @count", new object[] { idBill, idFood, count });
         }
     }
 }

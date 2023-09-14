@@ -34,7 +34,7 @@
             personalInformationToolStripMenuItem = new ToolStripMenuItem();
             logouToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            numericUpDown1 = new NumericUpDown();
+            nmFoodAmount = new NumericUpDown();
             btnAddFood = new Button();
             cbFood = new ComboBox();
             cbCategory = new ComboBox();
@@ -54,7 +54,7 @@
             columnHeader4 = new ColumnHeader();
             menuStrip1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nmFoodAmount).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)nmDiscount).BeginInit();
             panel3.SuspendLayout();
@@ -100,7 +100,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(numericUpDown1);
+            panel1.Controls.Add(nmFoodAmount);
             panel1.Controls.Add(btnAddFood);
             panel1.Controls.Add(cbFood);
             panel1.Controls.Add(cbCategory);
@@ -109,14 +109,14 @@
             panel1.Size = new Size(496, 96);
             panel1.TabIndex = 1;
             // 
-            // numericUpDown1
+            // nmFoodAmount
             // 
-            numericUpDown1.Location = new Point(322, 5);
-            numericUpDown1.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(79, 31);
-            numericUpDown1.TabIndex = 2;
-            numericUpDown1.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nmFoodAmount.Location = new Point(322, 5);
+            nmFoodAmount.Minimum = new decimal(new int[] { 100, 0, 0, int.MinValue });
+            nmFoodAmount.Name = "nmFoodAmount";
+            nmFoodAmount.Size = new Size(79, 31);
+            nmFoodAmount.TabIndex = 2;
+            nmFoodAmount.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // btnAddFood
             // 
@@ -126,6 +126,7 @@
             btnAddFood.TabIndex = 3;
             btnAddFood.Text = "Add food";
             btnAddFood.UseVisualStyleBackColor = true;
+            btnAddFood.Click += btnAddFood_Click;
             // 
             // cbFood
             // 
@@ -278,7 +279,7 @@
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nmFoodAmount).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)nmDiscount).EndInit();
@@ -296,7 +297,7 @@
         private ToolStripMenuItem logouToolStripMenuItem;
         private Panel panel1;
         private Button btnAddFood;
-        private NumericUpDown numericUpDown1;
+        private NumericUpDown nmFoodAmount;
         private ComboBox cbFood;
         private ComboBox cbCategory;
         private FlowLayoutPanel flpTable;
